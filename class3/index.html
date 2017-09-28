@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript</title>
+
+<link href="style.css"> 
+<link rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+	<style>
+
+	</style>
+	<script>
+
+		let javascriptInfo = "Javascript does have a purpose!"
+		console.log();
+		console.log(45);
+		console.log(true);
+		console.log(undefined);
+
+		if (javascriptInfo === 5) {
+			console.log('yay!');
+		} else {
+			console.log('boo 😲');
+		}
+		// returns the factorial of the input
+		function factorial(input) {
+		
+
+			const myInput = document.getElementById("my-input");
+			input = myInput.value;
+			// Definition of a factorial:
+			//3! = 3 * 2 * 1 = 6;
+
+			let returnValue = 1;
+			while (input > 0){
+			returnValue *= input;
+			input = input - 1;
+
+			}
+			alert ("The Factorial of " + input + "! = " + returnValue);
+			return returnValue;
+		}
+
+	</script>
+	</head>
+
+<body>
+	<h1 id="my-header">IDESN 3535: Flamingo</h1>
+	<ol>
+		<li class="my-list-item">
+		<a href="../index.html">Class 0</a>
+		</li>
+		<li class="my-list-item">
+		<a href="../class1/class1.html">Class 1</a>
+		</li>
+		<li class="my-list-item">
+		<a href="../class2/floats.html">Class 2</a>
+		</li>
+		<li class="my-list-item">
+		<a href="index.html">Class 3</a>
+		</li>
+	</ol>
+
+	<h1>Javascript</h1>
+	<input type="text" id="my-input"/>
+	<button id="factorial-button"> 
+	Calculate Factorial! 
+	</button>
+	
+	<script>
+	const factorialButton = document.getElementById("factorial-button");
+	factorialButton.addEventListener('click', factorial);
+	</script>
+</body>
+</html>
