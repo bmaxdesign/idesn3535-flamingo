@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Colors</title>
+
+<link rel="stylesheet" type="text/css" href="../style.css"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+	<style>
+		#splotch{
+			background-color: #7c7c7c;
+			height: 200px;
+			width: 200px;
+		}
+		#splotch.red {background: #ff0000;}
+		#splotch.blue {background: #0000ff;}
+		#splotch.yellow {background: #ffff00;}
+		#splotch.red.blue {background: #800080;}
+		#splotch.red.yellow {background: #ffa500;}
+		#splotch.yellow.blue {background: #008000;}
+		#splotch.red.yellow.blue {background: #000000;}
+
+		.enabled {background-color: #9DACB2}
+	</style>
+
+</head>
+<body>
+	<h1 id="my-header">IDESN 3535: Flamingo</h1>
+		<div id="navcontainer">
+<header>
+	<ul>
+		<li class="my-list-item">
+		<a href="../index.html">Class 0</a>
+		</li>
+		<li class="my-list-item">
+		<a href="../class1/class1.html">Class 1</a>
+		</li>
+		<li class="my-list-item">
+		<a href="../class2/floats.html">Class 2</a>
+		</li>
+		<li class="my-list-item">
+		<a href="../class3/class3.html">Class 3</a>
+		</li>
+		<li class="my-list-item">
+		<a href="class4.html">Class 4</a>
+		</li>
+	</ul>
+</header>
+	</div>
+
+	<h1>Colors</h1>
+	<p>
+		Click the "red", "blue" and "yellow" buttons below to explore basic color combinations!
+	</p>
+	
+	<input type="button" value="red" >
+	<input type="button" value="blue" >
+	<input type="button" value="yellow">
+	<div id="splotch">
+	</div>
+	
+	<script>
+	var buttons= document.getElementsByTagName('input');
+	for(i=0; i<3; i++){
+
+		buttons[i].addEventListener("click", changecolor);
+
+
+	}
+
+	function changecolor (newcolor){
+var splotch = document.getElementById("splotch");
+	splotch.classList.toggle(newcolor.currentTarget.value);
+	newcolor.currentTarget.classList.toggle("enabled")
+
+	}
+
+
+
+	</script>
+
+</body>
+</html>

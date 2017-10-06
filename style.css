@@ -1,13 +1,80 @@
 	body {
 		font-family: 'Noto Sans', sans-serif;
+		background-color: #F46927;
+		color: #FFDCA5;
+
 	}
 
+	h1{
+		text-align: center;
+	}
+
+#navcontainer ul
+{
+margin: 0;
+padding: 7px;
+list-style-type: none;
+text-align: center;
+}
+
+#navcontainer ul li { 
+	display: inline; 
+	}
+#navcontainer ul li a { 
+	text-decoration: none;
+	padding: .2em 1em;
+	color: #Fff;
+	background-color:#EEABA5; 
+	}
+
+	#navcontainer ul li a:hover
+	{
+	color: #620208;
+	}
+
+}
+ li a{
+ 	display: block;
+ 	text-align: center;
+ 	text-decoration: none;
+ }
+
+
 	#my-header {
-			color: #FF0000; 
-			font-size: 22px;
+			background-color: #EEABA5;
+			color: #E01C72; 
+			font-size: 50px;
+			margin: 30px 30px 30px 30px;
+			border-style: solid;
+			border-color: #E01C72;
+    		border-width: 5px;
+
 		}
 		.my-list-item {
-			font-size: 16px;
+		font-size: 16px;
 		}
-		.my-list-item a:hover {
-			color: #00ff00;
+
+		#section1 {
+			background-color: #E01C72;
+		}
+
+		#section2 {
+			background-color: #FFDCA5;
+		}
+
+		#section3{
+			background-color: #620208;
+		}
+.section{
+	color:black;
+}
+
+
+
+/*
+pale yellow #FFDCA5
+orange #F46927
+bright pink #E01C72
+light pink #EEABA5
+maroon #620208
+*/
