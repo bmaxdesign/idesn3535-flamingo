@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tip Calculator </title>
+
+<link rel="stylesheet" type="text/css" href="../style.css"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+
+<style>
+#container{
+	color:blue;
+	background-color: lightblue;
+	width:400px;
+	height: 600px;
+}
+</style>
+
+</head>
+<body>
+	<div id="container">
+		<h2>Tip Calculator</h2>
+		<p> Bill Total Before Tip: </p>
+	<input type=text id="billinput"></input>
+	<div id="addButton"><button class="button">+</button></div>
+	<div id="percentfield" class="output">Tip Percentage: 20%</div>
+	<div id="subtractButton"><button class="button">-</button></div>
+	<div id="tipamount" class="output">Tip Amount: $0.00</div>
+	<div id="billtotal" class="output">Bill Total After Tip: $0.00</div>
+</div>
+
+<script>
+	let tipPercent = 20;
+	const addButton = document.getElementById("addButton");
+	const subtractButton = document.getElementById("subtractButton");
+	// const billinput = document.getElementById("billinput");
+	function calculate(){
+		console.log (tipPercent)
+		document.getElementById("percentfield").innerHTML="Tip Percentage: "+(tipPercent)+"%";
+		// get our tipamount element
+		document.getElementById('tipamount').innerHTML="Tip Amount:$";
+		const tipamount = document.getElementById("tipamount");
+		// get our billtotal element
+		//
+
+		// get our billinput.value
+		// parseFloat(whatever billinput.vlue was)
+
+		// const tip = (tipamount / 100) * billAmount
+
+		// tipamount.innerHTML = tip;
+
+	}
+	addButton.addEventListener('click', function(){
+		tipPercent += 1;
+		calculate ()
+	})
+
+	subtractButton.addEventListener('click', function(){
+		tipPercent -= 1;
+		calculate ()
+	})
+
+	// addEventLister to billamount for keyup
+
+</script>
+
+</body>
+<header>
+</header>
+
+
+
+</html>
