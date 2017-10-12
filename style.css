@@ -72,35 +72,43 @@ text-align: center;
 
 /* Thus begins our strictly responsive page css */
 
-.logos{
-	width: 15%;
-	height: 30%;
-	background-color: #FFDCA5;
-	border: solid;
-	border-color: black;
-	float: left;
-	margin: 20px;
-}
-
-.storelink{
-	width: 15%;
-	height: 30%;
-	background-color: #FFDCA5;
-	border: solid;
-	border-color: black;
-	float: right;
-	margin: 20px;
-}
-
 #navigationbar{
+	display:flex;
+	flex-flow:row wrap;
+	align-items:flex-start;
 	width: 100%;
 	height: 100px;
 	background-color: #f7f7f7;
 }
 
+.logoshop{
+	display: flex;
+	justify-content: space-between;
+}
+.logos{
+	width: 75px;
+	height: 35px;
+	background-color: #FFDCA5;
+	border: solid;
+	border-color: cyan;
+	margin: 20px;
+}
+
+.storelink{
+	width: 75px;
+	height: 35px;
+	background-color: #FFDCA5;
+	border: solid;
+	border-color: red;
+	margin:20px;
+}
+
+
 .navlinks{
-	width: 15%;
-	height: 15%;
+	display:flex;
+	align-self: flex-end;
+	width: 50px;
+	height: 20px;
 	float: left;
 	margin: 20px;
 	background-color: ##EEABA5;
@@ -109,25 +117,25 @@ text-align: center;
 }
 
 #listenbar{
-		width: 30%;
+	display:flex;
+	width: 30%;
 	height: 100px;
-	float: right;
+	align-items:baseline;
 	background-color: #979797;
 }
 
 .listenbuttons{
+	align-self:baseline;
 	width: 15%;
 	height: 15%;
-	float: left;
 	margin: 20px;
-	background-color: ##EEABA5;
+	background-color: blue;
 	border-color: black;
 	border: solid;	
 }
 
 .articles{
 	width: 80%;
-	float: left;
 	margin: 20px;
 	background-color: #620208; /*maroon*/
 	border-color: black;
@@ -136,8 +144,7 @@ text-align: center;
 
 .ad{
 	width: 80%;
-	height: 80%;
-	float: left;
+	height: 50px;
 	margin: 20px;
 	background-color: #EEABA5; /*light pink*/
 	border-color: black;
@@ -145,7 +152,6 @@ text-align: center;
 }
 
 .articlepic{
-	float:right;
 	margin: 20px;
 }
 
@@ -162,4 +168,9 @@ orange #F46927
 bright pink #E01C72
 light pink #EEABA5
 maroon #620208
+
+Terminal:
+cd desktop
+cd idesn3535-flamingo
+surge -d idesn3535-flamingo.surge.sh
 */
