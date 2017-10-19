@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+			<title>JQUERY</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../class6/style.css"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+		<h1 id="my-header">IDESN 3535: Flamingo</h1>
+		<div id="navcontainer">
+		<header>
+		<ul>
+			<li class="my-list-item">
+				<a href="../index.html">Class 0</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class1/class1.html">Class 1</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class2/floats.html">Class 2</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class3/class3.html">Class 3</a>
+			</li>
+			<li class="my-list-item"> 
+				<a href="../class4/class4.html">Class 4</a> 
+			</li>
+			<li class="my-list-item">
+			<a href="../class5/animations.html">Class 5</a>
+			</li>
+			<li class="my-list-item">
+			<a href="class6.html">Class 6</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="my-list-item">
+			<a href="timer.html">Timer</a>
+		</ul>
+		</header>
+	</div>
+
+	<div id="wholetimerthingy">
+	<div id="timer">
+		<span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00
+	</div>
+
+	<div id="control-buttons">
+		<div>
+			<div>Hours</div>
+			<button class="control-button" data-amount="-3600">-</button>
+			<button class="control-button" data-amount="3600">+</button>
+		</div>
+		<div>
+			<div>Minutes</div>
+			<button class="control-button" data-amount="-60">-</button>
+			<button class="control-button" data-amount="60">+</button>
+		</div>
+			<div>
+			<div>Seconds</div>
+			<button class="control-button" data-amount="-1">-</button>
+			<button class="control-button" data-amount="1">+</button>
+		</div>
+
+	<button id="start-button">Start/Stop</button>
+</div>
+
+	<script>
+		let seconds= 0;
+
+		function displayTime(amountOfSeconds) {
+		let hrs=0;
+		let mins=0;
+			while (amountOfSeconds >= 3600) {
+				hrs++;
+				amountOfSeconds = amountOfSeconds - 3600
+			}
+
+			while (amountOfSeconds >=60){
+				mins++;
+				amountOfSeconds = amountOfSeconds - 60;
+			}
+			$("#hours").text(hrs);
+			$("#minutes").text(mins);
+			$("#seconds").text(amountOfSeconds);
+		}
+
+
+			$(document).ready(function(){
+				$(".control-button").on('click', function(){
+					const amount = parseInt($(this).data("amount"));
+					seconds+=amount;
+					seconds=Math.max(seconds, 0);
+					displayTime(seconds);
+				})
+			});
+			let timer;
+			function tick () {
+				seconds --;
+			seconds = Math.max(seconds, 0);
+			displayTime(seconds);
+		}
+
+		$("#start-button").on('click', function (){
+			if (timer) {
+				clearInterval (timer);
+				timer = false;
+			} else {
+				timer = setInterval(tick, 1000);
+			}
+		});
+
+
+
+
+	</script>
+</body>
+</html>

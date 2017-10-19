@@ -1,0 +1,54 @@
+#wholetimerthingy {
+	font-family: 'Amatic SC', cursive;
+	color: #FFDCA5;
+	font-size:2em;
+	border: solid;
+	border-style: double;
+	border-radius: 50px;
+	margin: 50px;
+	padding: 20px;
+	text-align: center;
+}
+
+#timer{
+	font-size: 4em;
+	background-color: orange;
+	border-radius: 50px;
+}
+
+
+#control-buttons{
+	background-color: #E01C72;
+	border-radius: 50px;
+	font-size: 1em;
+}
+
+.control-button{
+	background-color: #F46927;
+	border-radius: 50%;
+	font-size: .8em;
+	margin: 5px;
+	width: 40px;
+	height: 40px;
+	transition: background-color 250ms;
+}
+
+#start-button{
+	font-family: 'Amatic SC', cursive;
+	background-color: #F46927;
+	border-radius: 50px;
+	font-size: 1em;
+	width: 40%;
+	margin: 30px;
+	transition: width 1s, background-color 250ms;
+	
+}
+
+#start-button:hover{
+	background-color: orange;
+	width: 45%;
+}
+
+.control-button:hover{
+	background-color: orange;
+}

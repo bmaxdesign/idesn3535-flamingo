@@ -13,7 +13,11 @@
 	background-color: lightblue;
 	width:400px;
 	height: 600px;
+	margin: 40px;
+	text-align: center;
 }
+
+
 </style>
 
 </head>
@@ -47,7 +51,9 @@
 		parseFloat(billinput.value);
 		// []get our billinput.value
 		// []parseFloat(whatever billinput.vlue was)
-		const tip = (tipamount / 100) * billAmount;
+		const tip = (tipPercent / 100) * billinput;
+		const billAmount = parseFloat(billinput.value)
+		
 		// []const tip = (tipamount / 100) * billAmount
 		tipamount.innerHTML=tip;
 		// []tipamount.innerHTML = tip;
@@ -68,8 +74,6 @@
 </script>
 
 </body>
-<header>
-</header>
 
 
 
