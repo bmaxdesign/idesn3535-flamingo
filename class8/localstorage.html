@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Local Storage</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function(){
+		let count = localStorage.getItem('count')|| 0;
+
+		function updateCount () {
+			$("#count").text(count);
+			localStorage.setItem('count', count);
+		}
+
+		$("#down").on('click', function(){
+			count--;
+			updateCount();
+		});
+
+			$("#up").on('click', function(){
+			count++;
+			updateCount();
+		});
+
+		updateCount();
+	})
+</script> 
+	</head>
+
+<body>
+	<h1 id="my-header">IDESN 3535: Flamingo</h1>
+		<div id="navcontainer">
+		<header>
+		<ul>
+			<li class="my-list-item">
+				<a href="../index.html">Class 0</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class1/class1.html">Class 1</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class2/floats.html">Class 2</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class3/class3.html">Class 3</a>
+			</li>
+			<li class="my-list-item"> 
+			<a href="../class5/animations.html">Class 5</a>
+				<a href="../class4/class4.html">Class 4</a> 
+			</li>
+			<li class="my-list-item">
+			</li>
+			<li class="my-list-item">
+			<a href="../class6/class6.html">Class 6</a>
+			</li>
+			<li class="my-list-item">
+			<a href="../class7/class7.html">Class 7</a>
+			</li>
+			<li class="my-list-item">
+			<a href="localstorage.html">Class 8</a>
+			</li>
+		</ul>
+	<h1>Local Storage!</h1>
+	<div id="count"></div>
+<button id="down">Down</button>
+<button id="up">Up</button>
+
+
+
+</body>
+</html>

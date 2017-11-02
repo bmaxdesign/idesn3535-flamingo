@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<title>Class 7</title>
+<link rel="stylesheet" type="text/css" href="../style.css"> 
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+
+		<style>
+			table {border-collapse: collapse;}
+			tr:nth-child(odd) {background: brown; color: white;}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+		<script>
+			$(document).ready(function(){
+				const somethingTrue=true;
+				const somethingFalse=false;
+				// && means AND
+				// || means OR
+				if (somethingTrue){
+					console.log("It's True");
+				} else{
+					console.log("It's not true :(");
+				}
+
+
+				const typeOfBirds = ["Parrot", "Finch", "Dirt Bird", "Pigeon", "Grackel", "Crow", "Kiwi", "Cardinal", "Chicken"];
+
+				let i=0;
+				for (i=0; i<typeOfBirds.length; i++){
+					const bird = typeOfBirds[i];
+					console.log(bird);
+
+					const birdRow = document.createElement('tr');
+					const birdName = document.createElement('td');
+					birdName.innerText = bird;
+					//append means add inside of an element.
+					birdRow.append(birdName);
+
+					$(birdRow).append("<td>"+bird.length+"</td>");
+					$(birdRow).append(`<td>${bird.length}</td>`);
+					
+					$("table tbody").append(birdRow);
+
+
+
+				
+				/*const lengthRow = document.createElement('tr');
+				const lengthValue = document.createElement ('td');
+
+				lengthValue.innerText = typeOfBirds.length;
+
+				lengthRow.append(lengthValue)*/
+
+				}
+
+
+			});
+		</script>
+
+
+	</head>
+
+	<body>
+
+		<h1>Tables</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Bird</th>
+					<th>Length</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+
+			</tbody>
+		</table>
+	</body>
+	</html>
+	<!-- You can make comments in sublime by hitting "command" "/" -->

@@ -60,6 +60,7 @@ let percent = 20;
 
 function calculate (){
 	document.getElementById('percent').innerHTML = "Tip Percentage: " + percent + "%";
+	
 	var billSubtotal = Number(document.getElementById('billSubtotal').value);
 
 	var tipDollar = billSubtotal * (percent/100);

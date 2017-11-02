@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+			<title>Index</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+<script src ="template-engine.js"></script>
+
+<script>
+$ (document).ready(function (){
+
+	console.log(processTemplate(testString, testContext));
+
+	const testTemplate = getTemplate(testString, testContext);
+	$("body").prepend(testTemplate);
+});
+</script>
+
+</head>
+<body>
+	<p>Woof!</p>
+	<img src="http://www.bayareagsr.org/images/home/adoptme.jpg" alt="German Shepherd">
+
+</body>
+</html> 

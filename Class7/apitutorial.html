@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COURSE INFO</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+<script>
+	$(document).ready(function(){
+		$.ajax({
+			url: "http://www.bvandorn.com/idesn-3535/schedule.json",
+			data: {},
+			success: function(response) {
+				//loop through every class
+				for (let i = 0; i< response.classes.length; i++) {
+					const currentClass = response.classes[i];
+				//create a <tr> element via javascript for our class row.
+
+				const classRow = document.createElement('tr');
+
+				const dateCol=document.createElement('td');
+
+				dateCol.innerHTML = "Class " + i + "<br />" + currentClass.date;
+
+				classRow.append(dateCol);
+
+				//set up the agenda column
+				const agendaCol = document.createElement('td');
+				//our agenda is an unordered list so we can create a <ul>
+				const agendaList = document.createElement('ul');
+				//we can use forEach as another way to loop through an array
+				currentClass.agenda.forEach(function (agendaItem){
+					//create list items, set the text as our agendaItem
+					const agendaListItem = document.createElement('li');
+					agendaListItem.innerText = agendaItem;
+					//append our li to our ul
+					agendaList.append(agendaListItem);
+				});
+				//append our ul into our column
+					agendaCol.append(agendaList);
+				//add the new column to the class row
+					classRow.append(agendaCol);
+
+
+					const homeworkCol = document.createElement('td');
+				const homeworkList = document.createElement('ul');
+				currentClass.homework.forEach(function(homeworkItem){
+					const homeworkListItem = document.createElement('li');
+					homeworkListItem.innerText = homeworkItem;
+					homeworkList.append(homeworkListItem);
+				})
+
+				homeworkCol.append(homeworkList);
+				classRow.append(homeworkCol);
+
+				$('#class-schedule').append(classRow);
+
+				}
+			}
+		})
+
+});
+</script>
+</head>
+
+<body>
+			<h1 id="my-header">IDESN 3535: Flamingo</h1>
+		<div id="navcontainer">
+		<header>
+		<ul>
+			<li class="my-list-item">
+				<a href="../index.html">Class 0</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class1/class1.html">Class 1</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class2/floats.html">Class 2</a>
+			</li>
+			<li class="my-list-item">
+				<a href="../class3/class3.html">Class 3</a>
+			</li>
+			<li class="my-list-item"> 
+			<a href="../class5/animations.html">Class 5</a>
+				<a href="../class4/class4.html">Class 4</a> 
+			</li>
+			<li class="my-list-item">
+			</li>
+			<li class="my-list-item">
+			<a href="../class6/class6.html">Class 6</a>
+			</li>
+			<li class="my-list-item">
+			<a href="class7.html">Class 7</a>
+			</li>
+		</ul>
+		<ul>
+			<li class="my-list-item">
+			<a href="pokemon.html">Pokemon</a>
+			</li>
+			<li class="my-list-item">
+			<a href="apitutorial.html">Class Website</a>
+			</li>
+		</ul>
+		</header>
+	</div>
+
+		<h1>IDESN 3535-01: Advanced Web Projects</h1>
+		<h2>Syllabus</h2>
+		<a href="http://bit.ly/2gEbCrd" target="_blank">Syllabus</a>
+
+		<h2>Course Schedule</h2>
+		<table id="class-schedule" border="1">
+		</table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+			<title>About</title>
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<link href="../normalize.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+
+<script src ="template-engine.js"></script>
+<script src ="template-engine.js.html"></script>
+
+<script>
+	$(document).ready(function(){
+		$("body").prepend( getTemplate(headerTemplate, {class:'about', title: 'About'}) );
+		$("body").append( getTemplate(footerTemplate, {class: 'footer'}) );
+	});
+</script>
+
+<style>
+header {
+	width: 100%;
+	background: #667;
+	color: #fff;
+}
+
+ul {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+}
+
+ul li {
+	width: 33%;
+	text-align: center;
+	font-size: 24px;
+	transition: background 250ms;
+}
+
+ul li:hover {
+	background: #999;
+}
+
+ul.home li.home-nav {
+	border-bottom: 4px solid #fff;
+}
+ul.blog li.blog-nav {
+	border-bottom: 4px solid #fff;
+}
+ul.about li.about-nav {
+	border-bottom: 4px solid #fff;
+}
+footer{
+	position: absolute;
+	bottom: 0px;
+	background-color: #667;
+	width: 100%;
+}
+</style>
+
+
+</head>
+<body>
+	<p>This is my about page for the tutorial</p>
+
+</body>
+</html> 

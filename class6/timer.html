@@ -76,6 +76,7 @@
 	<script>
 		let seconds= 0;
 
+
 		function displayTime(amountOfSeconds) {
 		let hrs=0;
 		let mins=0;
@@ -88,9 +89,16 @@
 				mins++;
 				amountOfSeconds = amountOfSeconds - 60;
 			}
-			$("#hours").text(hrs);
-			$("#minutes").text(mins);
-			$("#seconds").text(amountOfSeconds);
+
+		function pad(number){
+			if(number) < 10{
+				return "0" + number;
+			}
+			return number;
+			}
+		$("#hours").text(pad(hrs));
+		$("#minutes").text(pad(mins));
+		$("#seconds").text(pad(amountOfSeconds));
 		}
 
 
