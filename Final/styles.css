@@ -2,6 +2,7 @@
 
 body{
 	font-family: 'Josefin Sans', sans-serif;
+	letter-spacing: 1px;
 	display: flex;
 	flex-direction: column;
 	background-image: url("starbackground.jpeg");
@@ -22,6 +23,11 @@ h1{
 	width: 100%;
 	height: 100px;
 	color: white;
+}
+
+#searchSeries{
+	display: flex;
+	flex-direction: row;
 }
 
 
@@ -45,12 +51,15 @@ h1{
 	margin: 10px;
 	margin-left: 20px;
 	font-size: 1.1em;
+	letter-spacing: 1px;
 	transition: background-color, 250ms, width, 250ms;
 	text-align: left;
 	padding-left: 30px;
 }
 
-
+#seasons{
+	width: 210px;
+}
 .leftNav:hover{
 	background-color: #333355;
 	width: 203px ;
@@ -73,6 +82,7 @@ h1{
 	margin-bottom: 30px;
 	margin-left: 20px;
 	font-size: 1.1em;
+	letter-spacing: 1px;
 	text-align: left;
 	padding-left: 30px;
 }
@@ -93,10 +103,11 @@ h1{
 #episodePanel{
 	width: 70%;
 	height: 70%;
-	background-color: tomato;
+	background-color: black;
 	align-self: flex-start;
 	margin-top: 10px;
-	margin-left: 50px;
+	margin-left: 70px;
+	margin-right: 10px;
 }
 
 #seriesButton {
@@ -105,13 +116,29 @@ h1{
 	color: white;
 	border-style: none;
 	border-radius: 0px;
-	width: 70%;
+	width: 275px;
 	height: 55px;
-	margin-bottom: 30px;
+	margin-top: 10px;
+	margin-left: 50px;
 	font-size: 1.1em;
+	letter-spacing: 1px;
 	text-align: left;
 	padding-left: 30px;
 }
+
+#episodeList{
+	width: 80%;
+	height: 300px;
+	background-color: purple;
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+ #episodePanel
+    }
 
 
 
