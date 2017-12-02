@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Project</title>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+<script src="utils.js"></script>
+<link href="../normalize.css" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+
+<script>
+
+	$(document).ready(function(){
+		$.ajax({
+  url: "http://www.bvandorn.com/idesn-3535/apis/flamingo.json",
+  success: function(response){
+    var seasons = Object.keys(response);
+    for (let i=0; i<seasons.length; i++){
+    	const currentSeason = seasons[i];
+    	
+    	const seasonButton = document.createElement('button');
+    	$(seasonButton).addClass("leftNav");
+    	seasonButton.innerText = 'Season ' + (i + 1);
+    	$('#seasons').append(seasonButton);
+    }
+
+  }
+});
+});
+
+
+</script>
+</head>
+
+<body>
+
+<!-- Title and hamgurger menu -->
+<div id='siteNav'>
+	<h1>Star Trek Episodes</h1>
+	<img src="hamburger2.png" alt="hamburger menu" style="width: 90px;height:60px; margin-top: 10px;">
+</div>
+
+<!-- Search and Content -->
+<div id='siteBody'>
+	
+	<div id="searchSeasons">
+		
+		<input type=text id="search" class="search" placeholder="Search">
+		</input> 
+		
+		<div id="seasons">
+			<!-- filled by script for API -->
+		</div>
+	</div>
+
+	<div id="episodePanel">
+		<button type="button" id="seriesButton">Series: ""</button>
+	</div>
+
+
+</div>
+
+
+
+</body>
+
+</html>
