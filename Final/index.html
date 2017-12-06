@@ -11,11 +11,47 @@
 <link href="styles.css" rel="stylesheet"/>
 
 <script>
+let savedResponse;
+
+function clickSeason (seasonNum) {
+	const currentSeason = savedResponse['season'+ seasonNum];
+	$("#episode-list").html("");
+
+	currentSeason.forEach(function(episode){
+		const episodeDiv = document.createElement('div');
+		$(episodeDiv).addClass("episodeStyle");
+
+		const image = document.createElement('img');
+		image.src = "http://www.bvandorn.com/idesn-3535/apis/flamingo.json" + episode.image.url;
+		episodeDiv.append(image);
+
+
+
+		episodeDiv.innerHTML = 
+			image + '<br />' +
+			"Episode: " + episode.title + '<br />' + '<br />' + 
+			"SeasonxEpisode: " + episode.episode + '<br />' + 
+			"Original Airdate: " + episode.airdate + '<br />'  + 
+			" Stardate: " + episode.stardate + '<br />' + 
+			episode.summary;
+		
+		$('#episode-list').append(episodeDiv);
+		
+	})
+
+
+}
+
+
+
+
+
 
 	$(document).ready(function(){
 		$.ajax({
   url: "http://www.bvandorn.com/idesn-3535/apis/flamingo.json",
   success: function(response){
+  	savedResponse=response;
     var seasons = Object.keys(response);
     for (let i=0; i<seasons.length; i++){
     	const currentSeason = seasons[i];
@@ -23,12 +59,16 @@
     	const seasonButton = document.createElement('button');
     	$(seasonButton).addClass("leftNav");
     	seasonButton.innerText = 'Season ' + (i + 1);
+    	$(seasonButton).on('click',function(){
+    		clickSeason(i+1);
+    	});
     	$('#seasons').append(seasonButton);
     }
 
   }
 });
 });
+
 
 
 </script>
@@ -53,14 +93,13 @@
 	<div id="seasonSidebar">
 		
 		<div id="seasons">
-			<!-- filled by script for API -->
+		<!-- filled by script for API -->
 		</div>
+	
 	</div>
 
-	<div id="episodePanel">
-
-		<div id="episodeList">
-		</div>
+	<div id="episode-list">
+	<!-- filled by script for API -->
 	</div>
 
 

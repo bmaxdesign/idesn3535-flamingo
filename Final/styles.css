@@ -100,14 +100,16 @@ h1{
    color: white;
 }
 
-#episodePanel{
+#episode-list{
 	width: 70%;
 	height: 70%;
-	background-color: black;
 	align-self: flex-start;
 	margin-top: 10px;
 	margin-left: 70px;
 	margin-right: 10px;
+	color: white;
+	overflow-y: scroll;
+	height: 445px;
 }
 
 #seriesButton {
@@ -126,12 +128,17 @@ h1{
 	padding-left: 30px;
 }
 
-#episodeList{
-	width: 80%;
-	height: 300px;
-	background-color: purple;
-
+.episodeStyle {
+	background-color: rgba(34, 24, 94, 0.6);
+	margin-bottom: 20px;
+	font-weight: 300;
+	letter-spacing: .5px;
+	color: white;
+	padding: 50px;
+	padding-bottom: 30px;
 }
+
+
 
 
 
