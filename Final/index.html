@@ -15,20 +15,14 @@ let savedResponse;
 
 function clickSeason (seasonNum) {
 	const currentSeason = savedResponse['season'+ seasonNum];
+	
 	$("#episode-list").html("");
 
 	currentSeason.forEach(function(episode){
 		const episodeDiv = document.createElement('div');
 		$(episodeDiv).addClass("episodeStyle");
 
-		const image = document.createElement('img');
-		image.src = "http://www.bvandorn.com/idesn-3535/apis/flamingo.json" + episode.image.url;
-		episodeDiv.append(image);
-
-
-
 		episodeDiv.innerHTML = 
-			image + '<br />' +
 			"Episode: " + episode.title + '<br />' + '<br />' + 
 			"SeasonxEpisode: " + episode.episode + '<br />' + 
 			"Original Airdate: " + episode.airdate + '<br />'  + 
@@ -36,16 +30,19 @@ function clickSeason (seasonNum) {
 			episode.summary;
 		
 		$('#episode-list').append(episodeDiv);
+
+		const image = document.createElement('img');
+		$(image).addClass("imageStyle");
+		image.src = episode.image;
+		episodeDiv.prepend(image);
+		episodeDiv.scrollTo(0,0);
+
+		const rating = document.createElement('rating');
+		episodeDiv.append(rating);
 		
 	})
 
-
 }
-
-
-
-
-
 
 	$(document).ready(function(){
 		$.ajax({
@@ -63,11 +60,25 @@ function clickSeason (seasonNum) {
     		clickSeason(i+1);
     	});
     	$('#seasons').append(seasonButton);
+
+
+    	const SeasonResponsive = document.createElement('option');
+    	$(SeasonResponsive).addClass("SeasonDropdown");
+    	
     }
 
   }
 });
 });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -83,7 +94,7 @@ function clickSeason (seasonNum) {
 </header>
 
 <div id="searchSeries">
-		<input type=text id="search" class="search" placeholder="Search"></input> 
+		<input type=text id="search" class="search" onkeyup="searchResults()" placeholder="Search"></input> 
 		<button type="button" id="seriesButton">Series: Deep Space Nine</button>
 	</div>
 
@@ -100,6 +111,7 @@ function clickSeason (seasonNum) {
 
 	<div id="episode-list">
 	<!-- filled by script for API -->
+	</div>
 	</div>
 
 

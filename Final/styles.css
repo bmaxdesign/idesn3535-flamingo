@@ -8,7 +8,7 @@ body{
 	background-image: url("starbackground.jpeg");
 	background-color: black;
 	background-size: cover;
-	 background-repeat: no-repeat;
+	background-repeat: no-repeat;
 }
 
 h1{
@@ -75,7 +75,6 @@ h1{
 	color: white;
 	border-style: none;
 	border-radius: 0px;
-	display: block;
 	width: 200px;
 	height: 55px;
 	margin: 10px;
@@ -89,7 +88,7 @@ h1{
 
 ::placeholder {
     color: white;
-    opacity: 1; /* Firefox */
+    opacity: 0.6; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -98,18 +97,6 @@ h1{
 
 ::-ms-input-placeholder { /* Microsoft Edge */
    color: white;
-}
-
-#episode-list{
-	width: 70%;
-	height: 70%;
-	align-self: flex-start;
-	margin-top: 10px;
-	margin-left: 70px;
-	margin-right: 10px;
-	color: white;
-	overflow-y: scroll;
-	height: 445px;
 }
 
 #seriesButton {
@@ -128,23 +115,104 @@ h1{
 	padding-left: 30px;
 }
 
+#episode-list{
+	width: 70%;
+	height: 70%;
+	align-self: flex-start;
+	margin-top: 10px;
+	margin-left: 70px;
+	margin-right: 10px;
+	color: white;
+	overflow-y: scroll;
+	height: 445px;
+}
+
+
 .episodeStyle {
 	background-color: rgba(34, 24, 94, 0.6);
 	margin-bottom: 20px;
 	font-weight: 300;
 	letter-spacing: .5px;
 	color: white;
-	padding: 50px;
-	padding-bottom: 30px;
+	padding: 40px;
+	display: flex;
+	flex-direction: row;
 }
 
+.imageStyle{
+	margin: 10px;
+	object-fit: contain;
+}
 
 
 
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
- #episodePanel
+ 
+h1{
+	margin: 30px;
+	text-align: center;
+}
+
+#searchSeries{
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	width: 95%;
+	align-self: center;
+}
+
+.search{
+	width: 100%;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+
+#seriesButton
+{
+	width: 100%;
+	margin-left: 0px;
+
+}
+
+#siteBody{
+	width: 100%;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+}
+
+.imageStyle{
+	margin: 10px;
+	max-width: 40%;
+	object-fit: contain;
+}
+
+#episode-list{
+	width: 95%;
+	height: 70%;
+	align-self: flex-start;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: white;
+	overflow-y: scroll;
+	height: 445px;
+}
+
+
+.episodeStyle {
+	background-color: rgba(34, 24, 94, 0.6);
+	margin-bottom: 10px;
+	font-weight: 300;
+	letter-spacing: .5px;
+	color: white;
+	padding: 20px;
+	padding-bottom: 20px;
+}
+
     }
 
 
