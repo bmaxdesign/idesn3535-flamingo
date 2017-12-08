@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Final Project</title>
-
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400" rel="stylesheet">
+<meta name="viewport" content="width=device-width" />
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
 <script src="utils.js"></script>
@@ -48,7 +48,7 @@ function clickSeason (seasonNum) {
 	$(document).ready(function(){
 		$.ajax({
   url: "http://www.bvandorn.com/idesn-3535/apis/flamingo.json",
-  success: function(response){
+  success: function getSeasons(response){
   	savedResponse=response;
     var seasons = Object.keys(response);
     for (let i=0; i<seasons.length; i++){
@@ -60,37 +60,27 @@ function clickSeason (seasonNum) {
     	$(seasonButton).on('click',function(){
     		clickSeason(i+1);
     	});
-    	$('#seasons').append(seasonButton);
-
-    	const SeasonResponsive = document.createElement('option');
-    	$(SeasonResponsive).addClass("SeasonMobileStyle");
-    	
-
-
-
-
+    	$('#seasons').append(seasonDropdown)
     }
-
   }
+
+
 });
+
+const seasonResponsive = document.createElement('option');
+    	$(seasonResponsive).addClass("seasonMobileStyle");
+    	getSeasons(response);
+    	seasonResponsive.innerText = "Season" + (i + 1);
+    	$(seasonResponsive).on('click',function(){
+    		clickSeason(i+1);
+    	});
+		$('#seasons').append(seasonButton)
 });
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 </head>
 
 <body>
-
 <!-- Title and hamgurger menu -->
 <header id='siteNav'>
 	<h1>Star Trek Episodes</h1>
