@@ -37,9 +37,10 @@ function clickSeason (seasonNum) {
 		episodeDiv.prepend(image);
 		episodeDiv.scrollTo(0,0);
 
+
+		/* For when we set up ratings...
 		const rating = document.createElement('rating');
-		episodeDiv.append(rating);
-		
+		episodeDiv.append(rating);  */
 	})
 
 }
@@ -61,10 +62,13 @@ function clickSeason (seasonNum) {
     	});
     	$('#seasons').append(seasonButton);
 
-
     	const SeasonResponsive = document.createElement('option');
-    	$(SeasonResponsive).addClass("SeasonDropdown");
+    	$(SeasonResponsive).addClass("SeasonMobileStyle");
     	
+
+
+
+
     }
 
   }
@@ -101,7 +105,9 @@ function clickSeason (seasonNum) {
 <!-- Search and Content -->
 <div id='siteBody'>
 
+
 	<div id="seasonSidebar">
+		<select id="seasonDropdown"></select>
 		
 		<div id="seasons">
 		<!-- filled by script for API -->

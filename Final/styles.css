@@ -5,7 +5,7 @@ body{
 	letter-spacing: 1px;
 	display: flex;
 	flex-direction: column;
-	background-image: url("starbackground.jpeg");
+	background-image: url("starbackground copy.jpeg");
 	background-color: black;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -32,8 +32,6 @@ h1{
 
 
 #siteBody{
-	width: 100%;
-	height: 800px;
 	display: flex;
 	flex-direction: row;
 }
@@ -60,6 +58,15 @@ h1{
 #seasons{
 	width: 210px;
 }
+
+#seasonSidebar{
+	height: 500px;
+}
+
+#seasonDropdown{
+	display: none;
+}
+
 .leftNav:hover{
 	background-color: #333355;
 	width: 203px ;
@@ -150,6 +157,13 @@ h1{
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
  
+body{
+	background-image: url("starbackground.jpeg");
+	background-color: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 h1{
 	margin: 30px;
 	text-align: center;
@@ -174,7 +188,14 @@ h1{
 {
 	width: 100%;
 	margin-left: 0px;
+}
 
+#seasonDropdown{
+	display: inline;
+	margin-left: 15px;
+	margin-top: 10px;
+	width: 95%;
+	border-radius: 0px;
 }
 
 #siteBody{
