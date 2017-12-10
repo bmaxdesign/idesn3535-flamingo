@@ -48,7 +48,7 @@ function clickSeason (seasonNum) {
 	$(document).ready(function(){
 		$.ajax({
   url: "http://www.bvandorn.com/idesn-3535/apis/flamingo.json",
-  success: function getSeasons(response){
+  success: function (response){
   	savedResponse=response;
     var seasons = Object.keys(response);
     for (let i=0; i<seasons.length; i++){
@@ -60,21 +60,19 @@ function clickSeason (seasonNum) {
     	$(seasonButton).on('click',function(){
     		clickSeason(i+1);
     	});
-    	$('#seasons').append(seasonDropdown)
-    }
-  }
-
-
-});
+    	$('#seasons').append(seasonButton)
+   
 
 const seasonResponsive = document.createElement('option');
-    	$(seasonResponsive).addClass("seasonMobileStyle");
-    	getSeasons(response);
-    	seasonResponsive.innerText = "Season" + (i + 1);
-    	$(seasonResponsive).on('click',function(){
-    		clickSeason(i+1);
+       	seasonResponsive.innerText = "Season " + (i + 1);
+    	seasonResponsive.value = i + 1;
+    	$(seasonDropdown).on('change',function(){
+    		clickSeason($('#seasonDropdown').val());
     	});
-		$('#seasons').append(seasonButton)
+		$('#seasonDropdown').append(seasonResponsive)
+	}
+  }
+});
 });
 
 </script>
@@ -84,7 +82,7 @@ const seasonResponsive = document.createElement('option');
 <!-- Title and hamgurger menu -->
 <header id='siteNav'>
 	<h1>Star Trek Episodes</h1>
-	<img src="hamburger2.png" alt="hamburger menu" style="width: 90px;height:60px; margin-top: 10px;">
+	<img src="hamburger2.png" alt="hamburger menu" id="hamburger">
 </header>
 
 <div id="searchSeries">

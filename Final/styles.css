@@ -1,18 +1,27 @@
 
+  html{
+  background: url("starbackground copy.jpeg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 body{
 	font-family: 'Josefin Sans', sans-serif;
 	letter-spacing: 1px;
 	display: flex;
 	flex-direction: column;
-	background-image: url("starbackground copy.jpeg");
-	background-color: black;
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 h1{
 	margin-left: 280px;
+}
+
+#hamburger{
+	width: 90px;
+	height:60px; 
+	margin-top: 10px;
 }
 
 
@@ -53,15 +62,17 @@ h1{
 	transition: background-color, 250ms, width, 250ms;
 	text-align: left;
 	padding-left: 30px;
+	outline: none;
+}
+
+#seasonDropdown {
+	display:none;
 }
 
 #seasons{
 	width: 210px;
 }
 
-#seasonSidebar{
-	height: 500px;
-}
 
 #seasonDropdown{
 	display: none;
@@ -72,7 +83,7 @@ h1{
 	width: 203px ;
 }
 
-.leftNav:active{
+.leftNav:focus{
 	background-color: #333355;
 }
 
@@ -136,7 +147,7 @@ h1{
 
 
 .episodeStyle {
-	background-color: rgba(34, 24, 94, 0.6);
+	background-color: rgba(34, 24, 94, 0.5);
 	margin-bottom: 20px;
 	font-weight: 300;
 	letter-spacing: .5px;
@@ -152,9 +163,7 @@ h1{
 }
 
 
-#seasonResponsive{
-	color:red;
-}
+
 
 @media all and (max-width: 768px) {
     /* For mobile phones: */
@@ -171,10 +180,13 @@ h1{
 	text-align: center;
 }
 
+#hamburger{
+	margin-top: 20px;
+}
+
 #searchSeries{
 	display: flex;
 	flex-direction: column;
-	margin: 0px;
 	width: 95%;
 	align-self: center;
 }
@@ -183,6 +195,7 @@ h1{
 	width: 100%;
 	margin-bottom: 0px;
 	margin-left: 0px;
+	height: 40px;
 }
 
 
@@ -190,14 +203,35 @@ h1{
 {
 	width: 100%;
 	margin-left: 0px;
+	height: 40px;
+}
+
+#seasonSidebar{
+	width: 95%;
+	align-self:center;
 }
 
 #seasonDropdown{
 	display: inline;
-	margin-left: 15px;
 	margin-top: 10px;
-	width: 95%;
-	border-radius: 0px;
+	margin-left: 0px;
+	width: 100%;
+	font-family: 'Josefin Sans', sans-serif;
+	background-color: #333355;
+	color: white;
+	-webkit-appearance: none;
+ 	-webkit-border-radius: 0px;
+	border-style: none;
+	height: 40px;
+	letter-spacing: 1px;
+	font-size: 1.1em;
+	outline: none;
+	text-align: left;
+	padding-left: 30px;
+}
+
+#seasonResponsive{
+	color:red;
 }
 
 #siteBody{
@@ -236,6 +270,10 @@ h1{
 	padding-bottom: 20px;
 }
 
+.leftNav {
+
+	display:none;
+}
     }
 
 
