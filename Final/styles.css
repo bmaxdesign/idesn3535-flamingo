@@ -167,13 +167,7 @@ h1{
 
 @media all and (max-width: 768px) {
     /* For mobile phones: */
- 
-body{
-	background-image: url("starbackground.jpeg");
-	background-color: black;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
+
 
 h1{
 	margin: 30px;

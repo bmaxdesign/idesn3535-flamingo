@@ -14,6 +14,7 @@
 let savedResponse;
 
 function clickSeason (seasonNum) {
+
 	const currentSeason = savedResponse['season'+ seasonNum];
 	
 	$("#episode-list").html("");
@@ -22,12 +23,16 @@ function clickSeason (seasonNum) {
 		const episodeDiv = document.createElement('div');
 		$(episodeDiv).addClass("episodeStyle");
 
-		episodeDiv.innerHTML = 
+		const episodeData = document.createElement('p');
+		$(episodeData).addClass("episodeDataStyle");
+		episodeData.innerHTML = 
 			"Episode: " + episode.title + '<br />' + '<br />' + 
 			"SeasonxEpisode: " + episode.episode + '<br />' + 
 			"Original Airdate: " + episode.airdate + '<br />'  + 
 			" Stardate: " + episode.stardate + '<br />' + 
 			episode.summary;
+
+			$("episodeData").para.appendChild(div);
 		
 		$('#episode-list').append(episodeDiv);
 
@@ -53,10 +58,11 @@ function clickSeason (seasonNum) {
     var seasons = Object.keys(response);
     for (let i=0; i<seasons.length; i++){
     	const currentSeason = seasons[i];
-    	
     	const seasonButton = document.createElement('button');
     	$(seasonButton).addClass("leftNav");
     	seasonButton.innerText = 'Season ' + (i + 1);
+    	$(seasonButton).focus();
+
     	$(seasonButton).on('click',function(){
     		clickSeason(i+1);
     	});
@@ -78,7 +84,7 @@ const seasonResponsive = document.createElement('option');
 </script>
 </head>
 
-<body>
+<body onload="clickSeason(1)"> >
 <!-- Title and hamgurger menu -->
 <header id='siteNav'>
 	<h1>Star Trek Episodes</h1>
@@ -87,7 +93,23 @@ const seasonResponsive = document.createElement('option');
 
 <div id="searchSeries">
 		<input type=text id="search" class="search" onkeyup="searchResults()" placeholder="Search"></input> 
-		<button type="button" id="seriesButton">Series: Deep Space Nine</button>
+		
+<div class="myDropdown">
+		<button type="button" id="seriesButton">Series: Next Generation</button>
+	
+
+<!-- https://www.w3schools.com/howto/howto_js_dropdown.asp
+		<div id="seriesDropdown" class='dropdown-content'>
+			<a href='#originalSeries'>Original Series</a>
+			<a href='#nextGen'>Next Generation</a>
+			<a href='#ds9'>Deep Space Nine</a>
+			<a href='#voyager'>Voyager</a>
+			<a href='#enterprise'>Enterprise</a>
+			<a href='#discovery'>Discovery</a>
+		</div>-->
+
+
+</div>
 	</div>
 
 <!-- Search and Content -->
