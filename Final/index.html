@@ -23,16 +23,14 @@ function clickSeason (seasonNum) {
 		const episodeDiv = document.createElement('div');
 		$(episodeDiv).addClass("episodeStyle");
 
-		const episodeData = document.createElement('p');
-		$(episodeData).addClass("episodeDataStyle");
-		episodeData.innerHTML = 
+			
+		episodeDiv.innerHTML = 
 			"Episode: " + episode.title + '<br />' + '<br />' + 
 			"SeasonxEpisode: " + episode.episode + '<br />' + 
 			"Original Airdate: " + episode.airdate + '<br />'  + 
 			" Stardate: " + episode.stardate + '<br />' + 
 			episode.summary;
 
-			$("episodeData").para.appendChild(div);
 		
 		$('#episode-list').append(episodeDiv);
 
@@ -127,8 +125,9 @@ const seasonResponsive = document.createElement('option');
 
 	<div id="episode-list">
 	<!-- filled by script for API -->
+	<div id="episodeData"></div>
 	</div>
-	</div>
+</div>
 
 
 </div>
