@@ -20,37 +20,27 @@ function clickSeason (seasonNum) {
 	$("#episode-list").html("");
 
 	currentSeason.forEach(function(episode){
-		const episodeDiv = document.createElement('div');
-		$(episodeDiv).addClass("episodeStyle");
 
 var episodeHTMLArray = currentSeason.map(episode => {
     return `
-        <div class='episode'>
+       <div class = 'episodeStyle'
+        <div class='imageStyle'>
+        	<img src="${episode.image}" />
+        <div class='episodeText'
             Episode: ${episode.title} <br /> <br />
             SeasonxEpisode: ${episode.episode} <br />
             Original Airdate: ${episode.airdate} <br />
             Stardate: ${episode.stardate}<br />
-            episode.summary
+            <p>${episode.summary}</p>
+        </div>
         </div>
     `
 })
 
 $('#episode-list').html(episodeHTMLArray.join(''))
 
-	/*	episodeDiv.innerHTML = 
-			"Episode: " + episode.title + '<br />' + '<br />' + 
-			"SeasonxEpisode: " + episode.episode + '<br />' + 
-			"Original Airdate: " + episode.airdate + '<br />'  + 
-			" Stardate: " + episode.stardate + '<br />' + 
-			episode.summary;*/
-		
-		$('#episode-list').append(episodeDiv);
 
-		const image = document.createElement('img');
-		$(image).addClass("imageStyle");
-		image.src = episode.image;
-		episodeDiv.prepend(image);
-		episodeDiv.scrollTo(0,0);
+		//episode-list.scrollTo(0,0);
 
 
 		/* For when we set up ratings...
@@ -86,6 +76,7 @@ const seasonResponsive = document.createElement('option');
     		clickSeason($('#seasonDropdown').val());
     	});
 		$('#seasonDropdown').append(seasonResponsive)
+		clickSeason(1);
 	}
   }
 });
@@ -94,7 +85,6 @@ const seasonResponsive = document.createElement('option');
 </script>
 </head>
 
-<body onload="clickSeason(1)"> >
 <!-- Title and hamgurger menu -->
 <header id='siteNav'>
 	<h1>Star Trek Episodes</h1>
