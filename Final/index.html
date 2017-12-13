@@ -23,10 +23,10 @@ function clickSeason (seasonNum) {
 
 var episodeHTMLArray = currentSeason.map(episode => {
     return `
-       <div class = 'episodeStyle'
-        <div class='imageStyle'>
-        	<img src="${episode.image}" />
-        <div class='episodeText'
+       <div id= 'episodeStyle'>
+        <div id='imageStyle'>
+        	<img src="${episode.image}" /> </div>
+        <div id='episodeText'>
             Episode: ${episode.title} <br /> <br />
             SeasonxEpisode: ${episode.episode} <br />
             Original Airdate: ${episode.airdate} <br />
@@ -92,36 +92,44 @@ const seasonResponsive = document.createElement('option');
 <!-- Title and hamgurger menu -->
 <header id='siteNav'>
 	<h1>Star Trek Episodes</h1>
-	<img src="hamburger2.png" alt="hamburger menu" id="hamburger">
+	<div class='dropdown'>
+		<img src="hamburger2.png" alt="hamburger menu" id="hamburger">
+			<div id=hamburgDropdown class="dropdown-content">
+				    	<p>Log In</p>
+						<p>Random</p>
+				  		<p>Top Rated</p>
+				  </div>
+	</div>
 </header>
 
+
+<!-- Search bar and series dropdown -->
 <div id="searchSeries">
 		<input type=text id="search" class="search" onkeyup="searchResults()" placeholder="Search"></input> 
 		
-<div class="myDropdown">
-		<button type="button" id="seriesButton">Series: Next Generation</button>
-	
+	<div class="dropdown">
+			<button type="button" id="seriesButton">Series: Next Generation</button>
+		
+				  <div class="dropdown-content">
+				    	<p>Original Series</p>
+						<p>Animated Series</p>
+				  		<p>Next Generation</p>
+				  		<p>Deep Space Nine</p>
+				  		<p>Voyager</p>
+				  		<p>Enterprise</p>
+				  		<p>Discovery</p>
+				  </div>
 
-<!-- https://www.w3schools.com/howto/howto_js_dropdown.asp
-		<div id="seriesDropdown" class='dropdown-content'>
-			<a href='#originalSeries'>Original Series</a>
-			<a href='#nextGen'>Next Generation</a>
-			<a href='#ds9'>Deep Space Nine</a>
-			<a href='#voyager'>Voyager</a>
-			<a href='#enterprise'>Enterprise</a>
-			<a href='#discovery'>Discovery</a>
-		</div>-->
-
-
-</div>
 	</div>
+</div>
 
-<!-- Search and Content -->
+<!-- Seasons menu and all the rest of the ontent -->
 <div id='siteBody'>
 
 
 	<div id="seasonSidebar">
 		<select id="seasonDropdown"></select>
+		<!-- for the responsive design -->
 		
 		<div id="seasons">
 		<!-- filled by script for API -->
