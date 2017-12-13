@@ -145,6 +145,7 @@ h1{
 	color: white;
 	overflow-y: scroll;
 	height: 445px;
+	scroll-behavior: smooth;
 }
 
 
