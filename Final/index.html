@@ -40,7 +40,9 @@ var episodeHTMLArray = currentSeason.map(episode => {
 $('#episode-list').html(episodeHTMLArray.join(''))
 
 
-		//episode-list.scrollTo(0,0);
+$( "div#episode-list" ).scrollTop( 0 );
+
+
 
 
 		/* For when we set up ratings...
@@ -67,6 +69,7 @@ $('#episode-list').html(episodeHTMLArray.join(''))
     		clickSeason(i+1);
     	});
     	$('#seasons').append(seasonButton)
+
    
 
 const seasonResponsive = document.createElement('option');
@@ -77,6 +80,7 @@ const seasonResponsive = document.createElement('option');
     	});
 		$('#seasonDropdown').append(seasonResponsive)
 		clickSeason(1);
+
 	}
   }
 });
